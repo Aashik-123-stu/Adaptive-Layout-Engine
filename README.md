@@ -5,7 +5,7 @@ arranges it to fit different surfaces like mobile, broadcast, and kiosk.
 It works with new surfaces too, without using hardcoded layouts for
 specific screens.
 
-Live Demo : 
+Live Demo : https://adaptive-layout-engine-lac.vercel.app/
 
 See **[ARCHITECTURE.md](./ARCHITECTURE.md)** for how the algorithm works
 and why it generalizes to unknown surfaces.
