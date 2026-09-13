@@ -10,7 +10,7 @@ Live Demo : https://adaptive-layout-engine-lac.vercel.app/
 See **[ARCHITECTURE.md](./ARCHITECTURE.md)** for how the algorithm works
 and why it generalizes to unknown surfaces.
 
-# Setup
+# Project Setup
 
 ```bash
 npm install
@@ -76,8 +76,11 @@ I used AI tools to help brainstorm the project structure, implement the initial 
 # Known Limitations
 
 1.The layout budget check mainly works in one direction. Cross-axis sizes are limited based on the surface size, but they are not fully checked for overflow.
+
 2.Accessibility is partly supported through minimum tap-target sizes, but automatic contrast checking is not implemented.
+
 3.The Canvas renderer loads images after rendering and redraws them when they are ready. This works for the demo, but production use could be improved by preloading images.
+
 4.The resolver was tested on the 5 built-in surfaces and some custom surfaces created in the demo. It was not tested with extreme sizes, such as a screen that is only 1px wide.
 
 # Time Spent
