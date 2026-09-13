@@ -36,27 +36,20 @@ const isTouch = !!surface.touchOnly;
 const isFar = surface.viewingDistance === "far";
 
 The aspect ratio decides the main composition:
-
-Aspect Ratio	Layout
->= 1.6	Row
-<= 0.72	Column
+Aspect Ratio	   Layout
+>= 1.6	              Row
+<= 0.72	              Column
 Otherwise	Centered Stack
-
-This means a new surface can be added without changing the resolver.
-Its size and constraints are enough for the engine to choose a layout.
 
 # Priority and Degradation
 
-When there is not enough space, the resolver reduces elements in
-priority order:
+When there is not enough space, the resolver reduces elements in priority order:
 
-Shrink less important elements first.
-If they still do not fit, remove them.
-Keep priority-1 elements whenever possible.
-If the surface is still too small, shrink priority-1 elements
-toward their minimum size.
-If the layout still cannot fit, return a warning instead of
-overflowing or crashing.
+1.Shrink less important elements first.
+2.If they still do not fit, remove them.
+3.Keep priority-1 elements whenever possible.
+4.If the surface is still too small, shrink priority-1 elements toward their minimum size.
+5.If the layout still cannot fit, return a warning instead of overflowing or crashing.
 
 This ensures that important content stays visible while lower-priority
 content can be removed when needed.
@@ -64,10 +57,9 @@ content can be removed when needed.
 # Hard Constraints
 
 Some rules cannot be broken:
-
-minTapTarget → Minimum size for clickable elements.
-minTextSize → Minimum font size for text.
-safeArea → Keeps content away from screen edges.
+1.minTapTarget → Minimum size for clickable elements.
+2.minTextSize → Minimum font size for text.
+3.safeArea → Keeps content away from screen edges.
 
 Priority only decides which element is affected first.
 Hard constraints are always respected.
@@ -94,19 +86,18 @@ All tested layouts have zero overlaps and no elements outside the
 surface bounds.
 
 # Extensibility
-New Surface : Add a new surface with its size and constraints. No changes are needed
+1.New Surface : Add a new surface with its size and constraints. No changes are needed
 in resolver.ts.
 
-New Renderer : A new renderer only needs to consume LayoutResult. The resolver does
+2.New Renderer : A new renderer only needs to consume LayoutResult. The resolver does
 not need to change.
 
-New Element Role : Add the role to the spec and define how the resolver should size and
+3.New Element Role : Add the role to the spec and define how the resolver should size and
 prioritize it.
 
 # Known Limitations
 
-Cross-axis overflow is controlled but not formally checked like the
-main axis.
-Accessibility support is basic.
-Text measurement depends on the Inter font being loaded correctly.
+1.Cross-axis overflow is controlled but not formally checked like the main axis.
+2.Accessibility support is basic.
+3.Text measurement depends on the Inter font being loaded correctly.
 
