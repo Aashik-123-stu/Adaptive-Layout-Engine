@@ -3,7 +3,7 @@
   --panel-border: #3f444a;
   --ink: #342d0d;
   --ink-soft: #637269;
-  --accent: #A290B7;
+  --accent:  #e085c2;
   --accent-dark: #2E6FA0;
   --warn: #E28268;
 }
@@ -22,10 +22,11 @@
 
 .eyebrow {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 1.05rem;
   letter-spacing: 0.08em;
   text-transform: capitalize;
-  color: #FF6B35;
+  color: black;
+  font-weight: 900;
   margin: 0 0 10px;
 }
 
@@ -107,15 +108,17 @@
   font-size: 0.8rem;
   padding: 6px 12px;
   border-radius: 6px;
-  border: 1.5px solid var(--panel-border);
   background: var(--panel);
+  border: 1.5px solid var(--panel-border);
   color: var(--ink-soft);
   cursor: pointer;
 }
 
 .toggle-btn.is-active {
   border-color: var(--accent);
-  color: var(--accent);
+  color: black;
+  border: 1.5px solid var(--panel-border);
+  font-weight: 500;
 }
 
 /* Custom surface form */
@@ -130,7 +133,7 @@
 .form-title {
   margin: 0 0 14px;
   font-size: 0.85rem;
-  color: var(--ink-soft);
+  color: #243329;
 }
 
 .form-row {
@@ -145,7 +148,7 @@
   flex-direction: column;
   gap: 6px;
   font-size: 0.8rem;
-  color: var(--ink-soft);
+  color: #243329;
 }
 
 .form-row input[type="number"] {
@@ -153,8 +156,8 @@
   padding: 8px 10px;
   border-radius: 6px;
   border: 1px solid var(--panel-border);
-  background: #14201A;
-  color: var(--ink);
+  background: #363a38;
+  color: #ffffff;
 }
 
 .checkbox-label {
@@ -214,6 +217,7 @@
   border-radius: 12px;
   padding: 20px;
   font-size: 0.85rem;
+  color: #14201A;
 }
 
 .inspector h2 {
@@ -239,7 +243,7 @@
 
 .mono {
   font-family: 'JetBrains Mono', monospace;
-  color: var(--accent);
+  color: #000099;
 }
 
 .inspector-block {
@@ -259,11 +263,11 @@
 }
 
 .inspector-block--dropped h3 {
-  color: var(--warn);
+  color: #520066;
 }
 
 .inspector-block--warn h3 {
-  color: var(--accent);
+  color: #990033;
 }
 
 .inspector-block--warn li,
