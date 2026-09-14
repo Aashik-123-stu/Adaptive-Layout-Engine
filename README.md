@@ -69,11 +69,11 @@ npm run typecheck  # for strict type-check
 - Canvas renderer using the same resolver output
 
 
-# AI Usage Note
+# AI Usage 
 
 I used AI tools to help brainstorm the project structure, implement the initial resolver logic and text-measurement utilities, and write some documentation. All generated code was reviewed, refactored, and tested to ensure correct layout behavior, proper validation, and maintainability. I also tested the resolver across all 5 surfaces and fixed issues found during testing, so I can clearly explain the implementation in an interview.
 
-# Known Limitations
+# Some Known Limitations
 
 1.The layout budget check mainly works in one direction. Cross-axis sizes are limited based on the surface size, but they are not fully checked for overflow.
 
@@ -85,4 +85,4 @@ I used AI tools to help brainstorm the project structure, implement the initial 
 
 # Time Spent
 
-Approximately 2-3 days(4 hr daily)
+Approximately 3 days(4-5 hrs daily)
